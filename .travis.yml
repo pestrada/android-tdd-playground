@@ -36,4 +36,5 @@ before_script:
   - chmod +x ci/wait_for_emulator.sh
   - ci/wait_for_emulator.sh
 
-#script: mvn install -Pintegration-tests -Dandroid.device=test
+script:
+  - gradle instrumentTest
