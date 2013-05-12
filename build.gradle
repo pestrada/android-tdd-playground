@@ -23,7 +23,12 @@ android {
       assets.srcDirs = ['assets']
     }
 
-    instrumentTest.setRoot('tests')
+    instrumentTest {
+      java.srcDirs = ['test/src']
+      res.srcDirs = ['test/res']
+      assets.srcDirs = ['test/assets']
+      resources.srcDirs = ['test/src']
+    }
   }
     
   dependencies {

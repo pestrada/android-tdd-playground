@@ -19,3 +19,7 @@ local.properties
 .classpath
 .project
 .settings
+
+# Gradle
+.gradle
+build/
