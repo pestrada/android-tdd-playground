@@ -9,4 +9,4 @@ These are the tools currently utilised:
 
 - Automation: Gradle
 - Testing: JUnit (Android Testing Framework)
-- Continous Integration Server: TravisCI
+- Continuous Integration Server: TravisCI
