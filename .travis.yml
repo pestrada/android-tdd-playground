@@ -14,9 +14,9 @@ before_install:
   - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
   
   # Gradle
-  - wget http://services.gradle.org/distributions/gradle-1.4-bin.zip
-  - unzip gradle-1.4-bin.zip
-  - export GRADLE_HOME=$PWD/gradle-1.4
+  - wget http://services.gradle.org/distributions/gradle-1.6-bin.zip
+  - unzip gradle-1.6-bin.zip
+  - export GRADLE_HOME=$PWD/gradle-1.6
   - export PATH=$GRADLE_HOME/bin:$PATH
   - echo $PATH
   - gradle -v
@@ -37,4 +37,4 @@ before_script:
   - ci/wait_for_emulator.sh
 
 script:
-  - gradle instrumentTest
+  - gradle connectedInstrumentTest

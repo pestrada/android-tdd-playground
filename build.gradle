@@ -4,7 +4,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.android.tools.build:gradle:0.3'
+    classpath 'com.android.tools.build:gradle:0.4'
   }
 }
 
@@ -12,6 +12,7 @@ apply plugin: 'android'
 
 android {
   compileSdkVersion 16
+  buildToolsVersion '17'
   
   sourceSets {
     main {
