@@ -19,6 +19,11 @@ before_install:
   - export GRADLE_HOME=$PWD/gradle-1.6
   - export PATH=$GRADLE_HOME/bin:$PATH
 
+  # install android build tools
+  - wget https://dl-ssl.google.com/android/repository/build-tools_r17-linux.zip
+  - unzip build-tools_r17-linux.zip -d $ANDROID_HOME
+  - mv $ANDROID_HOME/android-4.2.2 $ANDROID_HOME/build-tools
+
   # Install required components.
   # For a full list, run `android list sdk -a --extended`
   # Note that sysimg-16 downloads the ARM, x86 and MIPS images (we should optimize this).
@@ -29,10 +34,6 @@ before_install:
   - echo yes | android update sdk --filter sysimg-17 --no-ui --force > /dev/null
   - echo yes | android update sdk --filter platform-tools --no-ui --force > /dev/null
   - echo yes | android update sdk --filter extra-android-support --no-ui --force > /dev/null
-  # install android build tools
-  - wget https://dl-ssl.google.com/android/repository/build-tools_r17-linux.zip
-  - unzip build-tools_r17-linux.zip -d $ANDROID_HOME
-  - mv $ANDROID_HOME/android-4.2.2 $ANDROID_HOME/build-tools
 
   # Create and start emulator
   - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
