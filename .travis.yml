@@ -24,14 +24,15 @@ before_install:
   # Note that sysimg-16 downloads the ARM, x86 and MIPS images (we should optimize this).
   # Other relevant API's:
   #  addon-google_apis-google-16
-  - echo yes | android update sdk --filter android-16 --no-ui --force
-  - echo yes | android update sdk --filter android-17 --no-ui --force
-  - echo yes | android update sdk --filter sysimg-17 --no-ui --force
-  - echo yes | android update sdk --filter platform-tools --no-ui --force
-  - echo yes | android update sdk --filter extra-android-support --no-ui --force
+  - echo yes | android update sdk --filter android-16 --no-ui --force > /dev/null
+  - echo yes | android update sdk --filter android-17 --no-ui --force > /dev/null
+  - echo yes | android update sdk --filter sysimg-17 --no-ui --force > /dev/null
+  - echo yes | android update sdk --filter platform-tools --no-ui --force > /dev/null
+  - echo yes | android update sdk --filter extra-android-support --no-ui --force > /dev/null
   # install android build tools
   - wget https://dl-ssl.google.com/android/repository/build-tools_r17-linux.zip
   - unzip build-tools_r17-linux.zip -d $ANDROID_HOME
+  - mv android-4.2.2 build-tools
 
   # Create and start emulator
   - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
