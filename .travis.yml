@@ -34,7 +34,6 @@ before_install:
   - echo yes | android update sdk --filter android-16 --no-ui --force > /dev/null
   - echo yes | android update sdk --filter android-17 --no-ui --force > /dev/null
   - echo yes | android update sdk --filter sysimg-17 --no-ui --force > /dev/null
-  - echo yes | android update sdk --filter platform-tools --no-ui --force > /dev/null
   - echo yes | android update sdk --filter extra-android-support --no-ui --force > /dev/null
 
   # Create and start emulator
