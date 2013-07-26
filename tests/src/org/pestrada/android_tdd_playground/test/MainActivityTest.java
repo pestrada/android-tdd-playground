@@ -23,10 +23,10 @@ public class MainActivityTest extends
   protected void setUp() throws Exception {
     super.setUp();
     mainActivity = getActivity();
-    button = (Button) mainActivity.findViewById(R.id.button_test);
   }
   
   public void testChangeText() {
+    button = (Button) mainActivity.findViewById(R.id.button_test);
     TouchUtils.clickView(this, button);
     TextView view = (TextView) mainActivity.findViewById(R.id.textView1);
     assertEquals("new text", view.getText().toString());
